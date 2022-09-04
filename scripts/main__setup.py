@@ -73,6 +73,8 @@ def command_help(judge: JudgeEnum = None):
             "main__setup.py show -j CODECHEF -s PRACTICE -l DEBUG",
             "main__setup.py setup -j CODECHEF -s PRACTICE -l DEBUG -p FLOW001 "
             "--overwrite -w SOLUTION -w DESCRIPTION",
+            "main__setup.py setup -j CODECHEF -s PRACTICE -l DEBUG -p FLOW001 "
+            "--overwrite -w TESTCASES",
         ]
     elif judge == JudgeEnum.LEETCODE:
         commands = [
@@ -231,5 +233,9 @@ if __name__ == '__main__':
         for problem_id in problem_ids:
             problem = dictionary_of_problems[problem_id]
             for write_content_option in write_content_options:
+                root_directory = ".."
+                if write_content_option == WriteContentEnum.TESTCASES:
+                    root_directory += "\\..\\test_files"
                 judge_file_write.create_file_for_problem(
-                    problem, "..", write_content_option, should_overwrite=overwrite)
+                    problem, root_directory, write_content_option,
+                    should_overwrite=overwrite)

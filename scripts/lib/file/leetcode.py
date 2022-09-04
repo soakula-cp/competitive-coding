@@ -27,6 +27,14 @@ class LeetCodeFileWrite(BaseFileWrite):
             solution_base_class=solution_base_class,
             solution_main=solution_main)
 
+    def create_file_for_tests(
+        self,
+        problem: LeetCodeProblem,
+        output_directory: str,
+        should_overwrite: bool = False) -> (bool, str):
+        question = LeetCodeApi().get_question_info(problem)
+        return True, ""
+
     def create_file_for_problem(
         self,
         problem: LeetCodeProblem,

@@ -59,6 +59,13 @@ class BaseFileWrite(object):
         ]
         self.template_root_directory = template_root_directory
 
+    def create_file_for_tests(
+        self,
+        problem: Problem,
+        output_directory: str,
+        should_overwrite: bool = False) -> (bool, str):
+        return True, ""
+
     def create_file_for_problem(
         self,
         problem: Problem,
@@ -78,6 +85,17 @@ class BaseFileWrite(object):
             bool - True if the file has created/updated else False
             List[str] - content from the file which has been created/updated
         """
+        output_file_path = \
+            root_directory + \
+            ('/' if root_directory[:-1] != '/' else '') + \
+            problem.get_output_filename(write_type=write_type)
+        if write_type == WriteContentEnum.TESTCASES:
+            output_directory = os.path.dirname(output_file_path)
+            create_directory(output_directory)
+            return self.create_file_for_tests(
+                problem,
+                output_directory,
+                should_overwrite=should_overwrite)
         template_file_path = \
             self.template_root_directory + problem.get_template_filename(
                 write_type)
@@ -88,10 +106,6 @@ class BaseFileWrite(object):
         self.create_template_file(
             template_file_path, problem, write_type,
             should_overwrite=should_overwrite)
-        output_file_path = \
-            root_directory + \
-            ('/' if root_directory[:-1] != '/' else '') + \
-            problem.get_output_filename(write_type=write_type)
         _, _ = \
             self.check_if_file_exists_for_problem(output_file_path,
                                                   template_file_path)
