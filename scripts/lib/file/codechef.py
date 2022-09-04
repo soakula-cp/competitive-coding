@@ -31,8 +31,14 @@ class CodeChefFileWrite(BaseFileWrite):
         problem_components = \
             question["problemComponents"] \
                 if "problemComponents" in question else dict()
-        self.write_test(problem_components["sampleTestCases"], output_directory)
-        self.write_test(question["specialTestCases"], output_directory, "Special")
+        self.write_test(
+            problem_components["sampleTestCases"]
+                if "sampleTestCases" in problem_components else [],
+            output_directory)
+        self.write_test(
+            question["specialTestCases"]
+                if "specialTestCases" in question else [],
+            output_directory, "Special")
         return True, ""
 
     def create_file_for_problem(
