@@ -1,0 +1,12 @@
+# Problem Statement
+
+TEMPLATE__PROBLEM_STATEMENT
+
+# Constraints
+
+TEMPLATE__PROBLEM_CONSTRAINTS
+
+# Examples
+
+TEMPLATE__EXAMPLE_TESTS
+

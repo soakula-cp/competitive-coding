@@ -1,0 +1,28 @@
+# Problem Statement
+
+TEMPLATE__PROBLEM_STATEMENT
+
+# Constraints
+
+TEMPLATE__PROBLEM_CONSTRAINTS
+
+# Format
+
+## Input
+
+TEMPLATE__PROBLEM_INPUT_FORMAT
+
+## Output
+
+TEMPLATE__PROBLEM_OUTPUT_FORMAT
+
+# Subtasks
+
+TEMPLATE__PROBLEM_SUBTASKS
+
+# Sample Testcases
+
+TEMPLATE__EXAMPLE_TESTS
+
+# Useful References/Discussions
+
