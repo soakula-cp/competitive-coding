@@ -1,0 +1,43 @@
+## Build directories
+[Bb]uild/*
+
+## Executable directories
+*[Bb]in/*
+
+## Script files
+*/[Ss]cripts/*run.*
+
+## Template files
+*final_merged*
+
+## Log directories
+*[Ll]ogs*
+[Oo]ld
+*[Cc]ontent*
+
+## JetBrains directories
+.idea
+cmake-build*
+*venv
+
+## VSCode directories
+.vscode
+
+## Visual Studio
+.vs
+x64
+x86
+[Dd]ebug
+[Rr]elease
+
+## Visual Studio Code
+*.exe
+
+## Python
+*__pycache__*
+
+## Other Directories
+
+## Other extensions
+*.log
+.ipynb_checkpoints

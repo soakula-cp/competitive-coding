@@ -1,0 +1,31 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+indent_style = space
+indent_size = 4
+tab_width = 4
+max_line_length = 80
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.md]
+trim_trailing_whitespace = false
+
+[CMakeLists.txt]
+block_comment_start = ##
+block_comment_end = ##
+
+[*.cpp, *.h]
+# curly_bracket_next_line = true
+spaces_around_operators = true
+# spaces_around_brackets = both
+# indent_brace_style = Allman
+block_comment_start = /**
+block_comment_end = */
