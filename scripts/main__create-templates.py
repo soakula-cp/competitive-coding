@@ -39,7 +39,7 @@ def write_template_file(
 
 
 if __name__ == "__main__":
-    template_root_directory = ".\\templates\\final_merged\\"
+    template_root_directory = "..\\templates\\final_merged\\"
     judge = JudgeEnum.LEETCODE
     judge_file_write = None
     if judge == JudgeEnum.CODECHEF:
