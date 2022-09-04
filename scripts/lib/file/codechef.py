@@ -29,17 +29,21 @@ class CodeChefFileWrite(BaseFileWrite):
             problem_components = \
                 question["problemComponents"] \
                     if "problemComponents" in question else dict()
-            question_tags = question["tags"] if "tags" in question else ""
+            question_tags = \
+                ", ".join(question["user_tags"]) if "user_tags" in question else ""
+            question_tags += "; "
+            question_tags += \
+                ", ".join(question["computed_tags"]) if "computed_tags" in question else ""
             question_editorial_url = \
                 question["editorial_url"] if "editorial_url" in question else ""
             contest_code = \
                 question["contest_code"] if "contest_code" in question else ""
             contest_name = \
                 question["contest_name"] if "contest_name" in question else ""
-            tags = BeautifulSoup(question_tags, "lxml").text
+            # tags = BeautifulSoup(question_tags, "lxml").text
             if "TEMPLATE__PROBLEM_TAGS" in lines[idx]:
                 lines[idx] = \
-                    lines[idx].replace("TEMPLATE__PROBLEM_TAGS", tags)
+                    lines[idx].replace("TEMPLATE__PROBLEM_TAGS", question_tags)
             if "TEMPLATE__EDITORIAL_URL" in lines[idx]:
                 lines[idx] = \
                     lines[idx].replace(
@@ -47,7 +51,7 @@ class CodeChefFileWrite(BaseFileWrite):
             if "TEMPLATE__VIDEO_EDITORIAL_URL" in lines[idx]:
                 lines[idx] = lines[idx].replace(
                     "TEMPLATE__VIDEO_EDITORIAL_URL",
-                    question["video_editorial_url"] if "video_editorial_url" in question else "")
+                    question["gumlet_video_url"] if "gumlet_video_url" in question else "")
             if "TEMPLATE__DISCUSSION_URL" in lines[idx]:
                 lines[idx] = lines[idx].replace(
                     "TEMPLATE__DISCUSSION_URL", question["problemDiscussURL"])
