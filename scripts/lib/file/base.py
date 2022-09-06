@@ -140,7 +140,7 @@ class BaseFileWrite(object):
         short_date = today.strftime("%d-%m-%Y")
         author_alias = "sonapraneeth_a"
         author_name = "Sona Praneeth Akula"
-        author_email = "sonapraneeth.akula@gmail.com"
+        author_email = "soakula.cp@gmail.com"
         problem_directory = problem.problem_directory
         problem_id = str(problem.identifier)
         problem_url = problem.problem_url
