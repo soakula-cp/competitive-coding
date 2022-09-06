@@ -2,15 +2,16 @@
 /**
  * CLASS DESCRIPTION
  *
- * Judge:
- *  - Submission link: 
+ * Judge metadata:
+ *  - Submission link:
  *  - Status: .
  *  - Runtime:  sec
  *  - Memory usage:  M
- * Time complexity: O(T*O(solve)), where T is the number of test cases and O(solve) is the time complexity of the solve() function
- * Space complexity: O(solve), where O(solve) is the space complexity of the solve() function
- * Tags:
- * Categories:
+ * Algorithm metadata:
+ *  - Time complexity: O(T*O(solve)), where T is the number of test cases and O(solve) is the time complexity of the solve() function
+ *  - Space complexity: O(solve), where O(solve) is the space complexity of the solve() function
+ *  - Tags:
+ *  - Categories:
  * Additional notes
  *  -
  */

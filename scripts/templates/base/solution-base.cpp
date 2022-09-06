@@ -2,8 +2,8 @@
 /**
  * CLASS DESCRIPTION
  *
- * Base solution class which needs to be implemented to obtain solution for the 
- * question. Each inheritance of this class is unique in terms on approach, 
+ * Base solution class which needs to be implemented to obtain solution for the
+ * question. Each inheritance of this class is unique in terms on approach,
  * time and space complexity.
  */
 // clang-format on
@@ -22,13 +22,7 @@ class Solution {
      */
     // clang-format on
     // TODO(TEMPLATE__AUTHOR_ALIAS) :: Update based on problem requirements
-    static void print_answer(bool answer) {
-#ifdef PRINT_DEBUG
-        cout << answer << std::endl;
-#else
-        cout << answer << "\n";
-#endif
-    }
+    static void print_answer(bool answer) { cout << answer << "\n"; }
 
  protected:
     // clang-format off
@@ -38,10 +32,10 @@ class Solution {
      * Function in which solution for the question is calculated
      *
      * Parameters:
-     *  - N: int - 
+     *  - N: int -
      *
      * Returns:
-     *  - bool - 
+     *  - bool -
      */
     // clang-format on
     // TODO(TEMPLATE__AUTHOR_ALIAS) :: Update function signature
@@ -56,8 +50,9 @@ class Solution {
      *
      * Actual run to read input tests, solve problem and print output
      *
-     * Time complexity: O(T*O(solve)), where T is the number of test cases and O(solve) is the time complexity of the solve() function in the specific implementation
-     * Space complexity: O(solve), where O(solve) is the space complexity of the solve() function in the specific implementation
+     * Solution metadata:
+     *  - Time complexity: O(T*O(solve)), where T is the number of test cases and O(solve) is the time complexity of the solve() function in the specific implementation
+     *  - Space complexity: O(solve), where O(solve) is the space complexity of the solve() function in the specific implementation
      * Additional notes
      *  - Input tests are cleared once the output for the test is printed
      *  - Memory created in solution implementation is cleared once solve() is completed

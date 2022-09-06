@@ -94,8 +94,9 @@ class Solution {
      *
      * Actual run to read input tests, solve problem and print output
      *
-     * Time complexity: O(T*O(solve)), where T is the number of test cases and O(solve) is the time complexity of the solve() function in the specific implementation
-     * Space complexity: O(solve), where O(solve) is the space complexity of the solve() function in the specific implementation
+     * Solution metadata:
+     *  - Time complexity: O(T*O(solve)), where T is the number of test cases and O(solve) is the time complexity of the solve() function in the specific implementation
+     *  - Space complexity: O(solve), where O(solve) is the space complexity of the solve() function in the specific implementation
      * Additional notes
      *  - Input tests are cleared once the output for the test is printed
      *  - Memory created in solution implementation is cleared once solve() is completed
@@ -120,15 +121,16 @@ class Solution {
 /**
  * CLASS DESCRIPTION
  *
- * Judge:
+ * Judge metadata:
  *  - Submission link: https://www.codechef.com/viewsolution/73072150
  *  - Status: Correct Answer
  *  - Runtime: 0.00 sec
  *  - Memory usage: 5.1 M
- * Time complexity: O(T*O(1)) ~ O(1), where T is the number of test cases
- * Space complexity: O(1)
- * Tags:
- * Categories:
+ * Algorithm metadata:
+ *  - Time complexity: O(T*O(1)) ~ O(1), where T is the number of test cases
+ *  - Space complexity: O(1)
+ *  - Tags:
+ *  - Categories:
  * Additional notes
  *  -
  */
@@ -157,15 +159,16 @@ class Solution_01 : public Solution {
 /**
  * CLASS DESCRIPTION
  *
- * Judge:
+ * Judge metadata:
  *  - Submission link: https://www.codechef.com/viewsolution/73072183
  *  - Status: Correct Answer
  *  - Runtime: 0.00 sec
  *  - Memory usage: 5.2 M
- * Time complexity: O(T*O(1)) ~ O(T), where T is the number of test cases and N is number
- * Space complexity: O(1)
- * Tags:
- * Categories:
+ * Algorithm metadata:
+ *  - Time complexity: O(T*O(1)) ~ O(T), where T is the number of test cases and N is number
+ *  - Space complexity: O(1)
+ *  - Tags:
+ *  - Categories:
  * Additional notes
  *  -
  */
