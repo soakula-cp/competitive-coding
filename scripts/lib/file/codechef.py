@@ -81,10 +81,13 @@ class CodeChefFileWrite(BaseFileWrite):
                     lines[idx].replace(
                         "TEMPLATE__EDITORIAL_URL", question_editorial_url)
             if "TEMPLATE__VIDEO_EDITORIAL_URL" in lines[idx]:
+                video_url = \
+                    question["gumlet_video_url"] \
+                        if "gumlet_video_url" in question else ""
+                video_url = "" if video_url is None else video_url
                 lines[idx] = lines[idx].replace(
                     "TEMPLATE__VIDEO_EDITORIAL_URL",
-                    question[
-                        "gumlet_video_url"] if "gumlet_video_url" in question else "")
+                    video_url)
             if "TEMPLATE__DISCUSSION_URL" in lines[idx]:
                 lines[idx] = lines[idx].replace(
                     "TEMPLATE__DISCUSSION_URL", question["problemDiscussURL"])
