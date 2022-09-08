@@ -138,7 +138,9 @@ class BaseFileWrite(object):
         year = today.strftime("%Y")
         expanded_date = today.strftime("%d %B %Y")
         short_date = today.strftime("%d-%m-%Y")
-        author_alias = "sonapraneeth_a"
+        author_alias =
+            "soakula_cp"
+                if problem.judge is JudgeEnum.CodeChef else "soakula-cp"
         author_name = "Sona Praneeth Akula"
         author_email = "soakula.cp@gmail.com"
         problem_directory = problem.problem_directory

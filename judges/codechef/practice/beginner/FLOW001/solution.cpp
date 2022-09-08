@@ -17,7 +17,7 @@
  *        Filename: FLOW001/solution.cpp
  *      Created on: 04 September 2022
  *   Last modified: 04 September 2022
- *          Author: sonapraneeth_a
+ *          Author: soakula_cp
  *     Description: CODECHEF submission for 'Add Two Numbers' problem
  * Compile command: g++ solution.cpp -std=c++17 -lm -fomit-frame-pointer -pthread -O2 -o solution.exe
  */
@@ -26,7 +26,7 @@
  * CHANGELOG
  *
  * Date (DD-MM-YYYY)            Author               Update
- * 04-09-2022               sonapraneeth_a      - Creation of file
+ * 04-09-2022               soakula_cp      - Creation of file
  */
 // clang-format on
 

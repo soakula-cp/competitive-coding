@@ -18,7 +18,7 @@
  *        Filename: INTEST/solution.cpp
  *      Created on: 05 September 2022
  *   Last modified: 05 September 2022
- *          Author: sonapraneeth_a
+ *          Author: soakula_cp
  *     Description: CODECHEF submission for 'Enormous Input Test' problem
  * Compile command: g++ solution.cpp -std=c++17 -lm -fomit-frame-pointer -pthread -O2 -o solution.exe
  */
@@ -27,7 +27,7 @@
  * CHANGELOG
  *
  * Date (DD-MM-YYYY)            Author               Update
- * 05-09-2022               sonapraneeth_a      - Creation of file
+ * 05-09-2022               soakula_cp      - Creation of file
  */
 // clang-format on
 
