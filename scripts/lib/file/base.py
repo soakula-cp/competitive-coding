@@ -6,7 +6,7 @@ from datetime import date
 from typing import List
 
 from lib.problem.base import Problem
-from lib.utils.enums import WriteContentEnum
+from lib.utils.enums import WriteContentEnum, JudgeEnum
 from lib.utils.functions import create_empty_file, create_directory
 
 
@@ -138,9 +138,11 @@ class BaseFileWrite(object):
         year = today.strftime("%Y")
         expanded_date = today.strftime("%d %B %Y")
         short_date = today.strftime("%d-%m-%Y")
-        author_alias =
-            "soakula_cp"
-                if problem.judge is JudgeEnum.CodeChef else "soakula-cp"
+        author_alias = ""
+        if problem.judge == JudgeEnum.CODECHEF:
+            author_alias = "soakula_cp"
+        if problem.judge == JudgeEnum.LEETCODE:
+            author_alias = "soakula-cp"
         author_name = "Sona Praneeth Akula"
         author_email = "soakula.cp@gmail.com"
         problem_directory = problem.problem_directory

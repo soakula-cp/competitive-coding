@@ -44,6 +44,8 @@ class LeetCodeFileWrite(BaseFileWrite):
         already_setup, output_file_path = super().create_file_for_problem(
             problem, root_directory, write_type,
             should_overwrite=should_overwrite)
+        if write_type == WriteContentEnum.TESTCASES:
+            return
         question = LeetCodeApi().get_question_info(problem)
         lines = get_lines_in_a_file(output_file_path)
         for idx in range(len(lines)):
