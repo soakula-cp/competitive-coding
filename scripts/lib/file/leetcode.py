@@ -33,6 +33,13 @@ class LeetCodeFileWrite(BaseFileWrite):
         output_directory: str,
         should_overwrite: bool = False) -> (bool, str):
         question = LeetCodeApi().get_question_info(problem)
+        tests = question['exampleTestcases'].split('\n')
+        input_filename = f"{output_directory}\\Examples.in.txt"
+        filep = open(input_filename, "w")
+        filep.write(f"{len(tests)}\n")
+        for test in tests:
+            filep.write(f"{test}\n")
+        filep.close()
         return True, ""
 
     def create_file_for_problem(
