@@ -112,13 +112,14 @@ class SubmissionStatusEnum(enum.Enum):
     Enum for submission status
     """
     UNKNOWN = 0
-    ACCEPTED = 1
-    WRONG_ANSWER = 2
-    TIME_LIMIT_EXCEEDED = 3
-    MEMORY_LIMIT_EXCEEDED = 4
-    OUTPUT_LIMIT_EXCEEDED = 5
-    RUNTIME_ERROR = 6
-    COMPILE_ERROR = 7
+    CORRECT_ANSWER = 1
+    PARTIALLY_CORRECT_ANSWER = 2
+    WRONG_ANSWER = 3
+    TIME_LIMIT_EXCEEDED = 4
+    MEMORY_LIMIT_EXCEEDED = 5
+    OUTPUT_LIMIT_EXCEEDED = 6
+    RUNTIME_ERROR = 7
+    COMPILE_ERROR = 8
 
 
 class LogLevelEnum(enum.IntEnum):

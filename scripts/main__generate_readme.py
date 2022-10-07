@@ -1,6 +1,7 @@
 import argparse
 import os
 
+from lib.api.leetcode import LeetCodeApi
 from lib.utils.enums import JudgeEnum
 
 

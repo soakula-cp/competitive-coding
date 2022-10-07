@@ -63,25 +63,23 @@ def command_help(judge: JudgeEnum = None):
             "-l DEBUG",
             "main__setup.py setup -j CODECHEF -s PRACTICE -l DEBUG -p EMAILREM "
             "-p ANUARM --overwrite -w SOLUTION -w DESCRIPTION",
-            "main__setup.py setup -j CODECHEF -s EXPLORE -e LP1TO2 -c LP1TO201 "
-            "-l DEBUG -p HOOPS --overwrite -w SOLUTION -w DESCRIPTION",
-            "main__setup.py setup -j CODECHEF -s EXPLORE -e LP0TO1 -c LP0TO101 "
-            "-l DEBUG -p START01 --overwrite -w SOLUTION -w DESCRIPTION",
             "main__setup.py setup -j CODECHEF -s EXPLORE -e LP0TO1 -c LP0TO101 "
             "-l DEBUG -w SOLUTION -w DESCRIPTION",
-            "main__setup.py show -j CODECHEF -s CONTEST -c START54D",
-            "main__setup.py show -j CODECHEF -s PRACTICE -l DEBUG",
-            "main__setup.py setup -j CODECHEF -s PRACTICE -l DEBUG -p FLOW001 "
-            "--overwrite -w SOLUTION -w DESCRIPTION",
             "main__setup.py setup -j CODECHEF -s PRACTICE -l DEBUG -p FLOW001 "
             "--overwrite -w TESTCASES",
+            "main__setup.py setup -j CODECHEF -s EXPLORE -e LP2TO3 -c LP2TO307"
+            " -p HMAPPY2 --overwrite -w SOLUTION -w DESCRIPTION -w TESTCASES",
+            "main__setup.py setup -j CODECHEF -s CONTEST -c START56C "
+            "-w SOLUTION -w DESCRIPTION -w TESTCASES",
         ]
     elif judge == JudgeEnum.LEETCODE:
         commands = [
             # LeetCode commands
             "main__setup.py show -j LEETCODE -s PRACTICE -l DEBUG --force",
-            "main__setup.py setup -j LEETCODE -s PRACTICE -l DEBUG -p 1929 "
-            "-w SOLUTION -w DESCRIPTION",
+            "main__setup.py setup -j LEETCODE -s PRACTICE -l DEBUG -p 1991 "
+            "-w SOLUTION -w DESCRIPTION -w TESTCASES --overwrite",
+            "main__setup.py setup -j LEETCODE -s PRACTICE -l DEBUG -p 1991 "
+            "-p 509 -p 724 -p 1137 -p 1480 -w TESTCASES --overwrite",
         ]
     else:
         print(f"Unknown value for judge '{judge}'. Using default help setup")
@@ -95,7 +93,7 @@ def command_help(judge: JudgeEnum = None):
 
 
 if __name__ == '__main__':
-    command_help(JudgeEnum.CODECHEF)
+    # command_help(JudgeEnum.CODECHEF)
     # Take arguments as input from the program
     # Reference: https://docs.python.org/3/library/argparse.html
     parser = argparse.ArgumentParser()
@@ -206,10 +204,10 @@ if __name__ == '__main__':
 
     # Api initialization
     if judge == JudgeEnum.CODECHEF:
-        judge_api = CodeChefApi(source_type=source_type,)
+        judge_api = CodeChefApi(source_type=source_type)
         judge_file_write = CodeChefFileWrite("..\\templates\\final_merged\\")
     elif judge == JudgeEnum.LEETCODE:
-        judge_api = LeetCodeApi(source_type=source_type, )
+        judge_api = LeetCodeApi(source_type=source_type)
         judge_file_write = LeetCodeFileWrite("..\\templates\\final_merged\\")
 
     # List problems

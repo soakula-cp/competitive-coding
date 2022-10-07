@@ -143,3 +143,15 @@ def get_lines_in_a_file(path: str) -> List[str]:
     file_handle.close()
     return lines
 
+
+def remove_comments(lines: List[str]) -> List[str]:
+    if lines is None:
+        return []
+    cleaned_code = []
+    for line in lines:
+        temp_line = line.strip()
+        if not (
+            "//" in temp_line[:2] or "/**" in temp_line[:3] or "*" in temp_line[
+                                                                      :1]):
+            cleaned_code.append(line)
+    return cleaned_code
