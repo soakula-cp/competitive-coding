@@ -1,0 +1,57 @@
+{
+    /* Editor */
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.renderWhitespace": "all",
+    "editor.cursorStyle": "block",
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true,
+        "source.organizeImports": true
+    },
+    "editor.fontFamily": "'Cascadia Code PL', Consolas, 'Courier New', monospace",
+    "editor.fontSize": 17,
+    "editor.rulers": [
+        80,
+        100,
+        120
+    ],
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4,
+    "editor.detectIndentation": true,
+    /* Files */
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.autoSave": "onWindowChange",
+    /* Terminal */
+    "terminal.integrated.profiles.windows": {
+        "powershell": {
+            "path": "C:\\Users\\soakula\\Softwares\\Microsoft\\PowerShell\\7\\pwsh.exe",
+            "args": []
+        },
+        "advanced-cmd": {
+            "path": "C:\\windows\\System32\\cmd.exe",
+            "args": [
+                "/k C:\\Users\\soakula\\Softwares\\powerline\\init.bat"
+            ]
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "explorer.excludeGitIgnore": true,
+    "diffEditor.codeLens": true,
+    /* C++ */
+    "C_Cpp.clang_format_fallbackStyle": "Google",
+    "C_Cpp.clang_format_style": "file",
+    "C_Cpp.codeAnalysis.clangTidy.enabled": true,
+    "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.default.intelliSenseMode": "gcc-x64",
+    "C_Cpp.doxygen.generatedStyle": "/**",
+    "C_Cpp.formatting": "clangFormat",
+    "C_Cpp.loggingLevel": "Warning",
+    "C_Cpp.clang_format_path": "C:\\Users\\soakula\\Softwares\\Compilers\\LLVM\\bin\\clang-format.exe",
+    /* Python */
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.variableTypes": true,
+    "python.analysis.completeFunctionParens": true,
+}

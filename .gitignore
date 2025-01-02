@@ -20,9 +20,6 @@
 cmake-build*
 *venv
 
-## VSCode directories
-.vscode
-
 ## Visual Studio
 .vs
 x64
