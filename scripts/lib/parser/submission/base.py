@@ -2,7 +2,7 @@ import os
 from typing import List
 
 from lib.problem.base import Problem
-from lib.submission.base import Submission, JudgeMetadata, AlgorithmMetadata
+from lib.submission.base import AlgorithmMetadata, JudgeMetadata, Submission
 from lib.utils.functions import remove_comments
 
 

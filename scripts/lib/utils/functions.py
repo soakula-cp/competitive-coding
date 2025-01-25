@@ -59,6 +59,7 @@ def get_response(url: str) -> str:
     while response.status_code == 503:
         time.sleep(1)
         response = requests.get(url)
+        # response.raise_for_status()  # Raise an exception for bad status codes (4xx or 5xx)
     return response.text
 
 
@@ -98,6 +99,10 @@ def make_api_call(url: str, filename: str,
                                      data=data).content
         else:
             response = get_response(url)
+            if api_type == ApiEnum.WGET:
+                response = {
+                    "content": response,
+                }
         # Convert string response to dictionary
         response = json.loads(response)
         if not os.path.exists(os.path.dirname(filename)):

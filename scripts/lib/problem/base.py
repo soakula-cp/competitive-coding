@@ -1,3 +1,4 @@
+import os
 from functools import total_ordering
 from typing import Dict, List
 
@@ -116,10 +117,10 @@ class Problem(object):
             Name of the template file
         """
         _, extension = get_filename(write_type)
-        template_file_name = \
-            f"{str(self.judge).lower()}\\" + \
-            f"{str(write_type).lower()}-{str(self.source_type).lower()}" + \
-            f".{extension.lower()}"
+        template_file_name =(
+            os.path.join(
+                str(self.judge).lower(),
+                f"{str(write_type).lower()}-{str(self.source_type).lower()}.{extension.lower()}"))
         return template_file_name
 
     def get_output_filename(
@@ -136,17 +137,23 @@ class Problem(object):
         """
         filename, _ = get_filename(write_type)
         if self.source_type == SourceTypeEnum.PRACTICE:
-            return self.submit_directory + "/" \
-                   + slugify(str(self.difficulty)).lower() + "/" \
-                   + self.problem_directory + "/" + filename
+            return os.path.join(
+                self.submit_directory,
+                slugify(str(self.difficulty)).lower(),
+                self.problem_directory,
+                filename)
         if self.source_type == SourceTypeEnum.CONTEST:
-            return self.submit_directory + "/" \
-                   + self.contest_identifier + "/" \
-                   + self.problem_directory + "/" + filename
-        return self.submit_directory + "/" \
-               + self.explore_identifier + "/" \
-               + self.contest_identifier + "/" \
-               + self.problem_directory + "/" + filename
+            return os.path.join(
+                self.submit_directory,
+                self.contest_identifier,
+                self.problem_directory,
+                filename)
+        return os.path.join(
+            self.submit_directory,
+            self.explore_identifier,
+            self.contest_identifier,
+            self.problem_directory,
+            filename)
 
     def convert_to_dictionary(self) -> Dict[str, object]:
         """

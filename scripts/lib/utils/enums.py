@@ -7,6 +7,7 @@ class ApiEnum(enum.Enum):
     """
     DEFAULT = 1
     GRAPHQL = 2
+    WGET = 3
 
 
 class JudgeEnum(enum.Enum):
@@ -15,6 +16,7 @@ class JudgeEnum(enum.Enum):
     """
     CODECHEF = 1
     LEETCODE = 2
+    ADVENTOFCODE = 3
 
     def __str__(self):
         return self.name
