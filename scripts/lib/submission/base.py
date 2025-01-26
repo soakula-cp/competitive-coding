@@ -5,7 +5,7 @@ from lib.utils.enums import SubmissionStatusEnum
 
 
 class AlgorithmMetadata(object):
-    def __int__(self,
+    def __init__(self,
                 time_complexity: str = "",
                 space_complexity: str = "",
                 tags: List[str] = None,
@@ -33,11 +33,11 @@ class AlgorithmMetadata(object):
 
 
 class JudgeMetadata(object):
-    def __int__(self,
-                url: str,
-                status: SubmissionStatusEnum,
-                runtime: str,
-                memory: str,
+    def __init__(self,
+                url: str = "",
+                status: SubmissionStatusEnum = SubmissionStatusEnum.UNKNOWN,
+                runtime: str = "",
+                memory: str = "",
                 runtime_performance: str = "",
                 memory_performance: str = ""):
         """

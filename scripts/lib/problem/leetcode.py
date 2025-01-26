@@ -1,3 +1,4 @@
+import os
 from functools import total_ordering
 
 from slugify import slugify
@@ -79,20 +80,22 @@ class LeetCodeProblem(Problem):
             Name of the output file with the relative path from root directory
         """
         filename, _ = get_filename(write_type)
-        premium_str = "premium/" if self.is_premium is True else "non-premium/"
+        premium_str = f"{"" if self.is_premium is True else "non-"}premium"
         if self.source_type == SourceTypeEnum.PRACTICE:
-            answer = self.submit_directory + "/" \
-                   + slugify(str(self.difficulty)).lower() + "/" \
-                   + premium_str \
-                   + self.problem_directory + "/" + filename
-            return answer
+            return str(os.path.join(self.submit_directory,
+                                    slugify(str(self.difficulty)).lower(),
+                                    premium_str,
+                                    self.problem_directory,
+                                    filename))
         if self.source_type == SourceTypeEnum.CONTEST:
-            return self.submit_directory + "/" \
-                   + self.contest_identifier + "/" \
-                   + premium_str \
-                   + self.problem_directory + "/" + filename
-        return self.submit_directory + "/" \
-               + self.explore_identifier + "/" \
-               + self.contest_identifier + "/" \
-               + premium_str \
-               + self.problem_directory + "/" + filename
+            return str(os.path.join(self.submit_directory,
+                                   self.contest_identifier,
+                                   premium_str,
+                                   self.problem_directory,
+                                   filename))
+        return str(os.path.join(self.submit_directory,
+                                self.explore_identifier,
+                                self.contest_identifier,
+                                premium_str,
+                                self.problem_directory,
+                                filename))

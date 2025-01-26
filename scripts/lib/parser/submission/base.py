@@ -158,10 +158,10 @@ class SubmissionParser(object):
                         line.replace("Space complexity", "").strip()
                 if "Tags" in line:
                     algorithm_metadata.tags = \
-                        line.replace("Tags", "").strip()
+                        line.replace("Tags", "").strip().split(",")
                 if "Categories" in line:
                     algorithm_metadata.categories = \
-                        line.replace("Categories", "").strip()
+                        line.replace("Categories", "").strip().split(",")
         return judge_metadata, algorithm_metadata
 
     def extract_submission(self, problem: Problem, file: str) -> List[Submission]:

@@ -16,21 +16,21 @@ def get_readme_file_path(root_directory,
                          source_type: SourceTypeEnum,
                          explore_identifier: str,
                          contest_identifier: str):
-    output_directory = \
-        f"{root_directory}/judges/{str(judge).lower()}/{str(source_type).lower()}/"
+    output_directory = os.path.join(root_directory, "judges", str(judge).lower(),
+                                    str(source_type).lower())
     if len(explore_identifier) > 0:
-        output_directory += f"{explore_identifier}/"
+        output_directory = os.path.join(output_directory, explore_identifier)
     if len(contest_identifier) > 0:
-        output_directory += f"{contest_identifier}/"
-    return output_directory + 'README.md'
+        output_directory = os.path.join(output_directory, contest_identifier)
+    return os.path.join(output_directory, "README.md")
 
 
 def readme_for_submissions(root_directory: str, judge: JudgeEnum,
                            source_type: SourceTypeEnum,
                            explore_identifier: str,
                            contest_identifier: str,
-                           problem_ids: List[str] = None):
-    force = False
+                           problem_ids: List[str] = None,
+                           force: bool = False):
     judge_api = None
     parser = None
     # Api initialization
@@ -46,7 +46,7 @@ def readme_for_submissions(root_directory: str, judge: JudgeEnum,
             explore_identifier=explore_identifier,
             contest_identifier=contest_identifier,
             force=force)
-    all_problem_ids = [problem.identifier for problem in algorithm_problems]
+    all_problem_ids = [str(problem.identifier) for problem in algorithm_problems]
     problem_ids = \
         all_problem_ids \
             if problem_ids is None or len(problem_ids) == 0 \
@@ -65,12 +65,12 @@ def readme_for_submissions(root_directory: str, judge: JudgeEnum,
     table = []
     for problem_id in problem_ids:
         problem = dictionary_of_problems[problem_id]
-        output_file_path = \
-            root_directory + \
-            ('/' if root_directory[:-1] != '/' else '') + \
-            problem.get_output_filename(write_type=WriteContentEnum.SOLUTION)
+        output_file_path =(
+            os.path.join(root_directory,
+                         problem.get_output_filename(write_type=WriteContentEnum.SOLUTION)))
         if not os.path.exists(output_file_path):
             continue
+        print(f"Including {output_file_path} in README ...")
         submissions = parser.extract_submission(problem, output_file_path)
         for submission_id, submission in enumerate(submissions):
             row = [f"[{problem.identifier}]({problem.problem_url})",
@@ -91,7 +91,8 @@ def create_readme_for_submissions(root_directory: str, judge: JudgeEnum,
                                   source_type: SourceTypeEnum,
                                   explore_identifier: str,
                                   contest_identifier: str,
-                                  problem_ids: List[str] = None):
+                                  problem_ids: List[str] = None,
+                                  force: bool = False):
     readme_file_path = get_readme_file_path(root_directory, judge, source_type,
                                             explore_identifier,
                                             contest_identifier)
@@ -115,5 +116,6 @@ def create_readme_for_submissions(root_directory: str, judge: JudgeEnum,
                                                  source_type,
                                                  explore_identifier,
                                                  contest_identifier,
-                                                 problem_ids)
+                                                 problem_ids,
+                                                 force=force)
         file_handle.write(tabulate(table, headers=headings, tablefmt="github"))

@@ -65,9 +65,7 @@ class Problem(object):
         self.difficulty = difficulty
         self.difficulty_color = difficulty_color
         self.problem_directory = problem_directory
-        self.submit_directory = \
-            "judges\\{0}\\{1}".format(
-                str(judge).lower(), str(source_type).lower())
+        self.submit_directory = os.path.join("judges", str(judge).lower(), str(source_type).lower())
         self.compile_command = ""
 
     def __eq__(self, other):
