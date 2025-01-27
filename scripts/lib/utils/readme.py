@@ -55,6 +55,7 @@ def readme_for_submissions(root_directory: str, judge: JudgeEnum,
         'Problem Identifier',
         'Problem Title',
         'Solution Id',
+        'Language',
         'Submission link',
         'Time complexity',
         'Space complexity',
@@ -73,16 +74,21 @@ def readme_for_submissions(root_directory: str, judge: JudgeEnum,
         print(f"Including {output_file_path} in README ...")
         submissions = parser.extract_submission(problem, output_file_path)
         for submission_id, submission in enumerate(submissions):
+            runtime = submission.judge_metadata.runtime.replace(
+                "of C++ online submissions", "").strip()
+            memory = submission.judge_metadata.memory.replace(
+                "of C++ online submissions", "").strip()
             row = [f"[{problem.identifier}]({problem.problem_url})",
                    f"{problem.title}",
                    f"{submission_id + 1}",
+                   f"C++",
                    f"[Link]({submission.judge_metadata.url})",
                    f"{submission.algorithm_metadata.time_complexity}",
                    f"{submission.algorithm_metadata.space_complexity}",
-                   f"{submission.algorithm_metadata.categories}",
-                   f"{submission.algorithm_metadata.tags}",
-                   f"{submission.judge_metadata.runtime}",
-                   f"{submission.judge_metadata.memory}"]
+                   f"{",".join(submission.algorithm_metadata.categories) if submission.algorithm_metadata.categories is not None else ""}",
+                   f"{",".join(submission.algorithm_metadata.tags) if submission.algorithm_metadata.tags is not None else ""}",
+                   f"{runtime}",
+                   f"{memory}"]
             table.append(row)
     return headings, table
 

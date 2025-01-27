@@ -5,7 +5,7 @@ from datetime import datetime
 
 from lib.utils.enums import JudgeEnum, SourceTypeEnum, LogLevelEnum
 from lib.utils.functions import create_empty_file
-from lib.utils.readme_utils import create_readme_for_submissions
+from lib.utils.readme import create_readme_for_submissions
 
 
 def sanitize(input_str: str) -> str:
