@@ -38,3 +38,5 @@ x86
 ## Other extensions
 *.log
 .ipynb_checkpoints
+
+.vscode/settings.json

@@ -1,0 +1,20 @@
+{
+    /* Terminal */
+    "terminal.integrated.profiles.windows": {
+        "powershell": {
+            "path": "C:\\Users\\soakula\\Softwares\\Microsoft\\PowerShell\\7\\pwsh.exe",
+            "args": []
+        },
+        "advanced-cmd": {
+            "path": "C:\\windows\\System32\\cmd.exe",
+            "args": [
+                "/k C:\\Users\\soakula\\Softwares\\powerline\\init.bat"
+            ]
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "explorer.excludeGitIgnore": true,
+    "diffEditor.codeLens": true,
+    /* C++ */
+    "C_Cpp.clang_format_path": "C:\\LLVM\\bin\\clang-format.exe"
+}
