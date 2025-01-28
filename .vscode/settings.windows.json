@@ -1,5 +1,4 @@
 {
-    /* Terminal */
     "terminal.integrated.profiles.windows": {
         "powershell": {
             "path": "C:\\Users\\soakula\\Softwares\\Microsoft\\PowerShell\\7\\pwsh.exe",
@@ -15,6 +14,5 @@
     "terminal.integrated.defaultProfile.windows": "PowerShell",
     "explorer.excludeGitIgnore": true,
     "diffEditor.codeLens": true,
-    /* C++ */
     "C_Cpp.clang_format_path": "C:\\LLVM\\bin\\clang-format.exe"
 }

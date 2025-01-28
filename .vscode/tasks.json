@@ -3,7 +3,7 @@
         {
             "type": "cppbuild",
             "label": "C/C++: Default (Debug)",
-            "command": "C:\\msys64\\mingw64\\bin\\g++.exe",
+            "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
@@ -26,7 +26,7 @@
         {
             "type": "cppbuild",
             "label": "[Windows] [Debug] Codechef (C++17)",
-            "command": "C:\\msys64\\mingw64\\bin\\g++.exe",
+            "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
             "args": [
                 "-std=c++17",
                 "-lm",
@@ -49,12 +49,12 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "detail": "compiler: C:\\msys64\\mingw64\\bin\\g++.exe"
+            "detail": "compiler: C:\\msys64\\ucrt64\\bin\\g++.exe"
         },
         {
             "type": "cppbuild",
             "label": "[Windows] [Release] Codechef (C++17)",
-            "command": "C:\\msys64\\mingw64\\bin\\g++.exe",
+            "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
             "args": [
                 "-std=c++17",
                 "-lm",
@@ -76,7 +76,62 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "detail": "compiler: C:\\msys64\\mingw64\\bin\\g++.exe"
+            "detail": "compiler: C:\\msys64\\ucrt64\\bin\\g++.exe"
+        },
+        {
+            "type": "cppbuild",
+            "label": "[Windows] [Debug] LeetCode (C++17)",
+            "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+            "args": [
+                "-std=c++23",
+                "-lm",
+                "-fomit-frame-pointer",
+                "-pthread",
+                "-O2",
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "compiler: C:\\msys64\\ucrt64\\bin\\g++.exe"
+        },
+        {
+            "type": "cppbuild",
+            "label": "[Windows] [Release] LeetCode (C++23)",
+            "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+            "args": [
+                "-std=c++23",
+                "-lm",
+                "-fomit-frame-pointer",
+                "-pthread",
+                "-O2",
+                "-fdiagnostics-color=always",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "compiler: C:\\msys64\\ucrt64\\bin\\g++.exe"
         }
     ],
     "version": "2.0.0"
