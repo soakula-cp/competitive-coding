@@ -14,5 +14,6 @@
     "terminal.integrated.defaultProfile.windows": "PowerShell",
     "explorer.excludeGitIgnore": true,
     "diffEditor.codeLens": true,
-    "C_Cpp.clang_format_path": "C:\\LLVM\\bin\\clang-format.exe"
+    "C_Cpp.clang_format_path": "C:\\LLVM\\bin\\clang-format.exe",
+    "C_Cpp.codeAnalysis.clangTidy.path": "C:\\LLVM\\bin\\clang-tidy.exe"
 }

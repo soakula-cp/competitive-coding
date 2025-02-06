@@ -18,11 +18,9 @@
         100,
         120
     ],
-
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "files.autoSave": "onWindowChange",
-
     "terminal.integrated.profiles.windows": {
         "powershell": {
             "path": "C:\\Users\\soakula\\Softwares\\Microsoft\\PowerShell\\7\\pwsh.exe",
@@ -38,7 +36,6 @@
     "terminal.integrated.defaultProfile.windows": "PowerShell",
     "explorer.excludeGitIgnore": true,
     "diffEditor.codeLens": true,
-
     "C_Cpp.formatting": "clangFormat",
     "C_Cpp.clang_format_fallbackStyle": "Google",
     "C_Cpp.clang_format_style": "file",
@@ -48,7 +45,6 @@
     "C_Cpp.default.intelliSenseMode": "gcc-x64",
     "C_Cpp.doxygen.generatedStyle": "/**",
     "C_Cpp.loggingLevel": "Warning",
-
     "python.analysis.autoImportCompletions": true,
     "python.analysis.inlayHints.functionReturnTypes": true,
     "python.analysis.inlayHints.variableTypes": true,
