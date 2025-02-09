@@ -1,9 +1,11 @@
 ---
 Checks:          'clang-diagnostic-*,
+                    -clang-diagnostic-error,
                     clang-analyzer-*,
                     modernize-*,
                     -modernize-use-trailing-return-type,
                     readability-*,
+                    -readbility-convert-member-functions-to-static,
                     performance-*,
                     google-*,
                     -google-runtime-references,
