@@ -1,14 +1,14 @@
 import json
+import logging
 import os.path
 from typing import Dict, List
-from slugify import slugify
-import logging
-from tabulate import tabulate
 
 from lib.api.base import BaseApi
 from lib.problem.leetcode import LeetCodeProblem
-from lib.utils.enums import JudgeEnum, SourceTypeEnum, DifficultyEnum, ApiEnum
+from lib.utils.enums import ApiEnum, DifficultyEnum, JudgeEnum, SourceTypeEnum
 from lib.utils.functions import make_api_call
+from slugify import slugify
+from tabulate import tabulate
 
 
 class LeetCodeApi(BaseApi):
@@ -110,8 +110,8 @@ class LeetCodeApi(BaseApi):
     def get_algorithm_problems(self,
                                explore_identifier: str = "",
                                contest_identifier: str = "",
-                               force: bool = False) -> (
-        List[LeetCodeProblem], Dict[str, LeetCodeProblem]):
+                               force: bool = False) -> tuple[
+        List[LeetCodeProblem], Dict[str, LeetCodeProblem]]:
         """
         Get all problems in a given contest/practice
         Args:

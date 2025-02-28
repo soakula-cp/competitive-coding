@@ -1,6 +1,5 @@
 import markdownify
 from bs4 import BeautifulSoup
-
 from lib.api.codechef import CodeChefApi
 from lib.file.base import BaseFileWrite
 from lib.problem.codechef import CodeChefProblem
@@ -26,7 +25,7 @@ class CodeChefFileWrite(BaseFileWrite):
         self,
         problem: CodeChefProblem,
         output_directory: str,
-        should_overwrite: bool = False) -> (bool, str):
+        should_overwrite: bool = False) -> tuple[bool, str]:
         question = CodeChefApi().get_question_info(problem)
         problem_components = \
             question["problemComponents"] \

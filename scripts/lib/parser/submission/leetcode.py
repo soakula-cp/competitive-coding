@@ -17,7 +17,7 @@ class LeetCodeSubmissionParser(SubmissionParser):
                          base_class_present, implementation_present,
                          main_present)
 
-    def read_solution(self, lines: List[str], idx: int) -> (List[str], int):
+    def read_solution(self, lines: List[str], idx: int) -> tuple[List[str], int]:
         number_of_lines = len(lines)
         answer = []
         start, end = False, False

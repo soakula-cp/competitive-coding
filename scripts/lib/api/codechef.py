@@ -1,14 +1,14 @@
 import json
+import logging
 import os.path
 from typing import Dict, List
-from slugify import slugify
-import logging
-from tabulate import tabulate
 
 from lib.api.base import BaseApi
 from lib.problem.codechef import CodeChefProblem
-from lib.utils.enums import JudgeEnum, SourceTypeEnum, DifficultyEnum
+from lib.utils.enums import DifficultyEnum, JudgeEnum, SourceTypeEnum
 from lib.utils.functions import make_api_call
+from slugify import slugify
+from tabulate import tabulate
 
 
 class CodeChefApi(BaseApi):
@@ -115,8 +115,8 @@ class CodeChefApi(BaseApi):
     def get_algorithm_problems(self,
                                explore_identifier: str = "",
                                contest_identifier: str = "PRACTICE",
-                               force: bool = False) -> (
-        List[CodeChefProblem], Dict[str, CodeChefProblem]):
+                               force: bool = False) -> tuple[
+        List[CodeChefProblem], Dict[str, CodeChefProblem]]:
         """
         Get all problems in a given contest/practice
         Args:
