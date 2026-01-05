@@ -66,9 +66,9 @@ class Solution {
      */
     // clang-format on
     vector<int> twoSum(vector<int>& nums, int target) {
-        int sz = static_cast<int>(nums.size());
-        for (int idx1 = 0; idx1 < sz; ++idx1) {
-            for (int idx2 = idx1 + 1; idx2 < sz; ++idx2) {
+        int nums_sz = static_cast<int>(nums.size());
+        for (int idx1 = 0; idx1 < nums_sz; ++idx1) {
+            for (int idx2 = idx1 + 1; idx2 < nums_sz; ++idx2) {
                 if (nums[idx1] + nums[idx2] == target) {
                     return {idx1, idx2};
                 }
