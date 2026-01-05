@@ -1,5 +1,4 @@
 import markdownify
-
 from lib.api.leetcode import LeetCodeApi
 from lib.file.base import BaseFileWrite
 from lib.problem.leetcode import LeetCodeProblem
@@ -31,7 +30,7 @@ class LeetCodeFileWrite(BaseFileWrite):
         self,
         problem: LeetCodeProblem,
         output_directory: str,
-        should_overwrite: bool = False) -> (bool, str):
+        should_overwrite: bool = False) -> tuple[bool, str]:
         question = LeetCodeApi().get_question_info(problem)
         tests = question['exampleTestcases'].split('\n')
         input_filename = f"{output_directory}\\Examples.in.txt"

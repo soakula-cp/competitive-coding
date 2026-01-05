@@ -6,8 +6,8 @@ from datetime import date
 from typing import List
 
 from lib.problem.base import Problem
-from lib.utils.enums import WriteContentEnum, JudgeEnum
-from lib.utils.functions import create_empty_file, create_directory
+from lib.utils.enums import JudgeEnum, WriteContentEnum
+from lib.utils.functions import create_directory, create_empty_file
 
 
 class BaseFileWrite(object):
@@ -63,7 +63,7 @@ class BaseFileWrite(object):
         self,
         problem: Problem,
         output_directory: str,
-        should_overwrite: bool = False) -> (bool, str):
+        should_overwrite: bool = False) -> tuple[bool, str]:
         return True, ""
 
     def create_file_for_problem(
@@ -71,7 +71,7 @@ class BaseFileWrite(object):
         problem: Problem,
         root_directory: str,
         write_type: WriteContentEnum,
-        should_overwrite: bool = False) -> (bool, str):
+        should_overwrite: bool = False) -> tuple[bool, str]:
         """
         Create a file based on write_type for the problem in root_directory
         Args:
@@ -209,7 +209,7 @@ class BaseFileWrite(object):
     def get_template_part_file_info(
         problem: Problem,
         filename: str,
-        file_handle: any) -> (str, List[str]):
+        file_handle: any) -> tuple[str, List[str]]:
         """
 
         Args:
@@ -279,7 +279,7 @@ class BaseFileWrite(object):
     @staticmethod
     def check_if_file_exists_for_problem(
         output_file_path: str,
-        template_file_path: str) -> (bool, bool, str):
+        template_file_path: str) -> tuple[bool, bool, str]:
         """
 
         Args:

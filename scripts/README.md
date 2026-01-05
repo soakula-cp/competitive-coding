@@ -1,10 +1,16 @@
 # Setup
 
 - python3 -m venv .venv
-- .venv\bin\activate
+- source .venv\bin\activate
 - pip install -r .\requirements.txt
 
 # Help
+
+- Run from root directory
+
+```bash
+python scripts/main__generate_readme.py -j LEETCODE
+```
 
 # Commands
 

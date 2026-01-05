@@ -66,7 +66,7 @@ class SubmissionParser(object):
             idx += 1
         return answer, idx
 
-    def read_solution(self, lines: List[str], idx: int) -> (List[str], int):
+    def read_solution(self, lines: List[str], idx: int) -> tuple[List[str], int]:
         number_of_lines = len(lines)
         answer = []
         start, end = False, False
@@ -85,7 +85,7 @@ class SubmissionParser(object):
                 break
         return answer, idx
 
-    def read_solutions(self, lines: List[str], idx: int) -> (List[List[str]], int):
+    def read_solutions(self, lines: List[str], idx: int) -> tuple[List[List[str]], int]:
         number_of_lines = len(lines)
         infos = []
         while idx < number_of_lines:
@@ -96,7 +96,7 @@ class SubmissionParser(object):
         return infos, idx
 
     def read_solutions_file(self, file: str) -> \
-        (List[str], List[List[str]]):
+        tuple[List[str], List[List[str]]]:
         if not os.path.exists(file):
             print(f"Filename: {file} doesn't exist")
             return []
@@ -123,7 +123,7 @@ class SubmissionParser(object):
         return base_solution, solutions
 
     def extract_metadata(self, lines: List[str]) -> \
-        (JudgeMetadata, AlgorithmMetadata):
+        tuple[JudgeMetadata, AlgorithmMetadata]:
         judge_metadata_found, algorithm_metadata_found = False, False
         judge_metadata, algorithm_metadata = JudgeMetadata(), AlgorithmMetadata()
         for line in lines:

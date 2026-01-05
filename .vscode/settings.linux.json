@@ -1,4 +1,14 @@
 {
+    "C_Cpp.codeAnalysis.clangTidy.enabled": false,
     "C_Cpp.clang_format_path": "/usr/bin/clang-format",
-    "C_Cpp.codeAnalysis.clangTidy.path": "/usr/bin/clang-tidy"
+    "C_Cpp.codeAnalysis.clangTidy.path": "/usr/bin/clang-tidy",
+    "C_Cpp.codeAnalysis.exclude": {
+        "/usr/include": true
+    },
+    "C_Cpp.codeAnalysis.clangTidy.checks.disabled": [
+        "clang-diagnostic-error"
+    ],
+    "C_Cpp.codeAnalysis.clangTidy.args": [
+        "--extra-arg=-ferror-limit=0"
+    ]
 }
